@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "103340970412",
+    "firebase_url": "https://coroeb-a5482.firebaseio.com",
+    "project_id": "coroeb-a5482",
+    "storage_bucket": "coroeb-a5482.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103340970412:android:2eb41ebd49bc6a64",
+        "android_client_info": {
+          "package_name": "com.eva.especialista.coroeb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103340970412-7qthu31tfuu0030unvj750dbe7ur6hbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eva.especialista.coroeb",
+            "certificate_hash": "1cb8551802a5f8e4c1deb60d376bde510720e2fa"
+          }
+        },
+        {
+          "client_id": "103340970412-fg0bfueacub87568dchqfc125a3o1l59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkNTnipIxq0uxzFlTUtOYdKvOV8SuN0rc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103340970412-fg0bfueacub87568dchqfc125a3o1l59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103340970412:android:575f6d81b8c5fdbf",
+        "android_client_info": {
+          "package_name": "com.example.especialista.coroeb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103340970412-lbtvpfjl4juojkqk8tsshgn7esijltcm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.especialista.coroeb",
+            "certificate_hash": "1cb8551802a5f8e4c1deb60d376bde510720e2fa"
+          }
+        },
+        {
+          "client_id": "103340970412-fg0bfueacub87568dchqfc125a3o1l59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkNTnipIxq0uxzFlTUtOYdKvOV8SuN0rc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103340970412-fg0bfueacub87568dchqfc125a3o1l59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103340970412:android:e264f16531596a60",
+        "android_client_info": {
+          "package_name": "eva.isa.especialista.corosud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103340970412-fa68o4ro98mknsqtkr4ps53d3fmfveip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eva.isa.especialista.corosud",
+            "certificate_hash": "1cb8551802a5f8e4c1deb60d376bde510720e2fa"
+          }
+        },
+        {
+          "client_id": "103340970412-fg0bfueacub87568dchqfc125a3o1l59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkNTnipIxq0uxzFlTUtOYdKvOV8SuN0rc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103340970412-fg0bfueacub87568dchqfc125a3o1l59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

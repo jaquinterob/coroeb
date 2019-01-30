@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "616290865749",
+    "firebase_url": "https://prueba-14deb.firebaseio.com",
+    "project_id": "prueba-14deb",
+    "storage_bucket": "prueba-14deb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616290865749:android:070dcadabd2b000c",
+        "android_client_info": {
+          "package_name": "com.example.especialista.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616290865749-h7nhovjfr534994p2rbighr6ej14mfd4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.especialista.firebase",
+            "certificate_hash": "1cb8551802a5f8e4c1deb60d376bde510720e2fa"
+          }
+        },
+        {
+          "client_id": "616290865749-qfhfopugqq8gde07af9j8bgdcms2gfos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmluFPc663LsgFMMfJcygA6n-Tk0HTjjU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616290865749-qfhfopugqq8gde07af9j8bgdcms2gfos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
