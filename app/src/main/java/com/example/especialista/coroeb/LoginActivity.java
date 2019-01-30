@@ -22,7 +22,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 //import static com.example.especialista.coroeb.R.*;
-
 /**
  * A login screen that offers login via email/password.
  */
@@ -35,10 +34,7 @@ static final String ERROR_CONTRASEÑA="com.google.firebase.auth.FirebaseAuthInva
 static  final String ERROR_USUARIO="com.google.firebase.auth.FirebaseAuthInvalidUserException: There is no user record corresponding to this identifier. The user may have been deleted.";
 ProgressDialog progressDialog;
    EditText mCorreo, mPassword;
-
     boolean validacionCorreo=false,validacionPassword=false, validacionCorreoVerificado=false;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
