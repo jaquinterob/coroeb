@@ -1,5 +1,4 @@
 package com.example.especialista.coroeb;
-
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -7,14 +6,12 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.eva.especialista.coroeb.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
