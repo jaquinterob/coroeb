@@ -6,6 +6,8 @@
     <color name="colorBlanco">#f3ffffff</color>
     <color name="colorBarra">#22665e</color>
     <color name="colorHint">#abb0b1</color>
+    <color name="otro">#063b4b</color>
+    <color name='fondo_gris'>#f9ffffff</color>
 
     <color name="black_overlay">#fef40000</color>
 </resources>

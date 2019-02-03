@@ -4,9 +4,9 @@
         android:id="@android:id/text1"
         style="?android:attr/spinnerDropDownItemStyle"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:layout_height="40dp"
         android:ellipsize="marquee"
-        android:textColor="#efeded"
+        android:textColor="@color/colorPrimary"
 
 
        />

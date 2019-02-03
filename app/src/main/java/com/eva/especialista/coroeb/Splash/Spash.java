@@ -23,7 +23,7 @@ new Handler().postDelayed(new Runnable() {
         finish();
     }
 
-},3000);
+},1000);
 
     }
 
