@@ -27,6 +27,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 
@@ -81,6 +82,14 @@ public class Practicar extends AppCompatActivity {
     final String PDFB5 = "https://www.pdf-archive.com/2018/04/22/005-oh-dios-de-israel-bajo/005-oh-dios-de-israel-bajo.pdf";
     final String PDFA5 = "https://www.pdf-archive.com/2018/04/22/005-oh-dios-de-israel-alto/005-oh-dios-de-israel-alto.pdf";
 
+    //Ya regocijemos
+
+    final String PDFTODOS6 = "https://www.pdf-archive.com/2019/02/03/6/6.pdf";
+    final String PDFT6 = "https://www.pdf-archive.com/2019/02/03/6/6.pdf";
+    final String PDFS6 = "https://www.pdf-archive.com/2019/02/03/6/6.pdf";
+    final String PDFB6 = "https://www.pdf-archive.com/2019/02/03/6/6.pdf";
+    final String PDFA6 = "https://www.pdf-archive.com/2019/02/03/6/6.pdf";
+
 
     String pdfSoprano, pdfAlto, pdfTenor, pdfBajo, pdfTodos;
 
@@ -100,7 +109,7 @@ public class Practicar extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     ImageButton imgButton;
     SeekBar seekBarBarraReproductor, seekBarVolSoprano, seekBarVolAlto, seekBarVolTenor, seekBarVolBajo, seekBarVolPiano;
-    TextView tv_tiempo_actual,tv_tiempo_restante;
+    TextView tv_tiempo_actual, tv_tiempo_restante;
 
 
     @Override
@@ -111,8 +120,8 @@ public class Practicar extends AppCompatActivity {
 
 //casteo de elementos
         //Layouts
-        tv_tiempo_actual=(TextView)findViewById(id.tv_tiempo_actual);
-        tv_tiempo_restante=(TextView)findViewById(id.tv_tiempo_restante);
+        tv_tiempo_actual = (TextView) findViewById(id.tv_tiempo_actual);
+        tv_tiempo_restante = (TextView) findViewById(id.tv_tiempo_restante);
         linearLayoutVoces = (LinearLayout) findViewById(id.LinearLayoutVoces);
         linearLayoutReproductor = (LinearLayout) findViewById(id.LinearlayoutReproductor);
         btnPDFSoprano = (Button) findViewById(id.btnPDFSoprano);
@@ -237,6 +246,15 @@ public class Practicar extends AppCompatActivity {
                     case 5:
                         btnPlay.setEnabled(true);
                         eleccionSpiner = 5;
+                        linearLayoutVoces.setVisibility(View.VISIBLE);
+                        linearLayoutReproductor.setVisibility(View.VISIBLE);
+                        seekBarBarraReproductor.setEnabled(false);
+                        colorearSeekBars();
+
+                        break;
+                    case 6:
+                        btnPlay.setEnabled(true);
+                        eleccionSpiner = 6;
                         linearLayoutVoces.setVisibility(View.VISIBLE);
                         linearLayoutReproductor.setVisibility(View.VISIBLE);
                         seekBarBarraReproductor.setEnabled(false);
@@ -414,65 +432,82 @@ if(mpSoprano!=null){
 
     private void actualizarTiempos() {
         int tiempo_bruto = mpSoprano.getCurrentPosition() / 1000;
+        int tiempo_total = mpSoprano.getDuration()/1000;
         String tiempo_actual;
-        tiempo_actual = calcular_min(tiempo_bruto) + ":" + calcular_seg(tiempo_bruto);
+        String min_actual=calcular_min(tiempo_bruto);
+        String seg_actual=calcular_seg(tiempo_bruto);
+        tiempo_actual = min_actual + ":" + seg_actual;
         tv_tiempo_actual.setText(tiempo_actual);
+        String total ="- "+calcular_min_restante(Integer.parseInt(min_actual),tiempo_total,Integer.parseInt(seg_actual))+":"+calcular_seg_restante(Integer.parseInt(seg_actual),tiempo_total);
+        tv_tiempo_restante.setText(total);
+    }
+
+    private String calcular_min_restante(int min_actual, int tiempo_total,int seg_actual) {
+        int recorrido_actual=mpSoprano.getCurrentPosition() / 1000;
+        if (recorrido_actual==0){
+            return "00";
+        }
+        int  res;
+        res=((tiempo_total-recorrido_actual)/(60));
+        String r;
+        if (res < 10) {
+
+            r = "0" + String.valueOf(res);
+        } else {
+            r = String.valueOf(res);
+        }
+        return r;
+    }
+
+
+    private String calcular_seg_restante(int seg_actual, int tiempo_total) {
+        int recorrido_actual=mpSoprano.getCurrentPosition() / 1000;
+        if (recorrido_actual==0){
+            return "00";
+        }
+        int calculo=((tiempo_total-seg_actual)%60);
+        String r;
+        if (calculo < 10) {
+
+            r = "0" + String.valueOf(calculo);
+        } else {
+            r = String.valueOf(calculo);
+        }
+        return r;
     }
 
     private String calcular_min(int tiempo_bruto) {
         int res;
         String res_final;
-        if (tiempo_bruto==0){
-            res= 0;
-        }else{
-           res=  tiempo_bruto/60;
+        if (tiempo_bruto == 0) {
+            res = 0;
+        } else {
+            res = tiempo_bruto / 60;
         }
-        if(res<10){
-            res_final="0"+String.valueOf(res);
-        }else{
-            res_final=String.valueOf(res);
+        if (res < 10) {
+            res_final = "0" + String.valueOf(res);
+        } else {
+            res_final = String.valueOf(res);
         }
         return res_final;
     }
 
     private String calcular_seg(int tiempo_bruto) {
-        int res;
-        String res_final;
-        if (tiempo_bruto==0){
+        long res;
+        long res_final;
+        if (tiempo_bruto == 0) {
             return "00";
-        }else{
-            if (tiempo_bruto>59 && tiempo_bruto<=119 ){
-                res= tiempo_bruto-60;
-            }else{
-                if (tiempo_bruto>119 && tiempo_bruto<=179){
-                    res= tiempo_bruto-120;
-                }else{
-                    if (tiempo_bruto>179 && tiempo_bruto<=239){
-                        res= tiempo_bruto-180;
-                    }else{
-                        if (tiempo_bruto>239 && tiempo_bruto<=299){
-                            res= tiempo_bruto-240;
-                        }else{
-                            if (tiempo_bruto>299 && tiempo_bruto<=359){
-                                res= tiempo_bruto-300;
-                            }else{
-                                if (tiempo_bruto>359 && tiempo_bruto<=419){
-                                    res= tiempo_bruto-360;
-                                }else{
-                                    res= tiempo_bruto;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        } else {
+            res = tiempo_bruto % 60;
         }
-        if(res<10){
-            res_final="0"+String.valueOf(res);
-        }else{
-            res_final=String.valueOf(res);
+        String r;
+        if (res < 10) {
+
+            r = "0" + String.valueOf(res);
+        } else {
+            r = String.valueOf(res);
         }
-        return res_final;
+        return r;
     }
 
     private void deshabilitarBotones() {
@@ -490,6 +525,7 @@ if(mpSoprano!=null){
         listItems.add("4. Oh, creaciones del Señor");
         listItems.add("5. Si a Kolob");
         listItems.add("6. Oh Dios de Israel");
+        listItems.add("7. Ya regocijemos (COROEB)");
     }
 
     private void setupListeners() {
@@ -782,6 +818,14 @@ if(mpSoprano!=null){
                 mpPiano = MediaPlayer.create(this, raw.piano5);
                 setVolumenAReproductores();
                 break;
+            case 6:
+                mpSoprano = MediaPlayer.create(this, raw.s6);
+                mpAlto = MediaPlayer.create(this, raw.a6);
+                mpTenor = MediaPlayer.create(this, raw.t6);
+                mpBajo = MediaPlayer.create(this, raw.b6);
+                mpPiano = MediaPlayer.create(this, raw.piano6);
+                setVolumenAReproductores();
+                break;
         }
     }
 
@@ -818,7 +862,6 @@ if(mpSoprano!=null){
         mpPiano.release();
         crearReproductores();
         setVolumenAReproductores();
-
     }
 
     private void prepararBarraReproductor() {
@@ -1102,11 +1145,17 @@ if(mpSoprano!=null){
             pdfBajo = PDFB5;
             pdfTodos = PDFTODOS5;
         }
+        if (eleccionSpiner == 6) {
+            pdfSoprano = PDFS6;
+            pdfAlto = PDFA6;
+            pdfTenor = PDFT6;
+            pdfBajo = PDFB6;
+            pdfTodos = PDFTODOS6;
+        }
     }
 
 
     private void colorearSeekBars() {
-
         seekBarVolPiano.getProgressDrawable().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_IN);
         seekBarVolPiano.getThumb().setColorFilter(Color.parseColor("#80FFFFFF"), PorterDuff.Mode.SRC_IN);
         seekBarVolSoprano.getProgressDrawable().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_IN);
@@ -1119,10 +1168,7 @@ if(mpSoprano!=null){
         seekBarVolBajo.getThumb().setColorFilter(Color.parseColor("#80FFFFFF"), PorterDuff.Mode.SRC_IN);
         seekBarBarraReproductor.getProgressDrawable().setColorFilter(Color.parseColor("#fffcb1"), PorterDuff.Mode.SRC_IN);
         seekBarBarraReproductor.getThumb().setColorFilter(Color.parseColor("#fffcb1"), PorterDuff.Mode.SRC_IN);
-
     }
-
-
 }
 
 
